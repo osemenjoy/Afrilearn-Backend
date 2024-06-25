@@ -25,6 +25,6 @@ class LearnerSignUpForm(UserCreationForm):
         user = super().save(commit=False)
         if commit:
             user.save()
-            profile = Profile.objects.create(user=user, user_type='learner')
+            profile = Profile.objects.create(user=user, user_type='Student')
             profile.save()
         return user

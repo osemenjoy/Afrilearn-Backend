@@ -26,7 +26,7 @@ def learner_signup(request):
             return redirect('login')
     else:
         form = LearnerSignUpForm()
-    return render(request, 'signup.html', {'form': form, 'user_type': 'Learner'})
+    return render(request, 'signup.html', {'form': form, 'user_type': 'Student'})
 
 def login_view(request):
     if request.method == 'POST':
