@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Programs</title>
+    <link rel="stylesheet" href="{% static 'css/Programmes.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h2>AfriLearn</h2>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'programmes' %}">Programs</a></li>
+                <li><a href="{% url 'tutors' %}">Tutors</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Log In</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="popular-programs">
+        <div>
+            <h1>Popular Programs</h1>
+        </div>
+    </section>
+    <section class="Programs-container">
+        <div class="inner-container">
+            <div class="item1">
+                <div>RE</div>
+                <h2>Renewable Energy</h2>
+            </div>
+            <div class="item2">
+                <div>CS</div>
+                <h2>Cyber Security</h2>
+            </div>
+            <div class="item3">
+                <div>AI</div>
+                <h2>Artificial Intelligence</h2>
+            </div>
+        </div>
+    </section>
+    <div class="search-programs">
+        <input type="text" placeholder="Search for programs">
+    </div>
+    <section class="blog">
+        <div class="post">
+            <h1>Blog Post</h1>
+        </div>
+        <div class="blog-container">
+            <div class="blog-item1">
+                <img src="{% static 'images/women_in_tech.png' %}" alt="women">
+                <figcaption>African women in Tech</figcaption>
+            </div>
+            <div class="blog-item2">
+                <img src="{% static 'images/making_money.png' %}" alt="money">
+                <figcaption>Making Money in Tech</figcaption>
+            </div>
+            <div class="blog-item1">
+                <img src="{% static 'images/gaming.png' %}" alt="gaming">
+                <figcaption>Game Development in Africa</figcaption>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="last-section">
+            <h2>Technology in Africa</h2>
+            <p>Technology in Africa is a dynamic and rapidly evolving landscape, marked by both significant opportunities and formidable challenges. The continent has demonstrated a remarkable ability to leapfrog traditional technologies, directly adopting the latest innovations to drive development.</p>
+        </div>
+    </section>
+</body>
+</html>

@@ -3,81 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register with AfriLearn</title>
-    <link rel="stylesheet" href="Register.css">
-    <script defer src="Register.js"></script>
+    <title>Register - AfriLearn</title>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">AfriLearning</div>
+            <div class="logo">AfriLearn</div>
             <ul class="nav-links">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="/AfriLearn/Pages/Programmes.html">Programmes</a></li>
+                <li><a href="#">Programmes</a></li>
                 <li><a href="#">Tutors</a></li>
-                <li><a href="/AfriLearn/Pages/Register.html">Register with AfriLearning</a></li>
-                <li><a href="#">Log In</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
             </ul>
         </nav>
     </header>
-    <section class="hero">
-       
-            <h1>Register with AfriLearn</h1>
-    
-        
-    </section>
-    <section class="container">
-        <div class="switch-btn">
-            <button class="student-btn">
-                Student
-            </button>
-
-            <button class="tutor-btn">
-                Tutor
-            </button>
-
-        </div>
-        <div class="container-sm">
-            <div class="container1">
-        <form action="Register.html" method="POST">
-            <h2>Register</h2>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <label for="confirm password">Confirm Password:</label>
-            <input type="confirm password" id="confirm password" name="confirm password" required>
-
-            <button type="submit">Register</button>
-
+    <main>
+        <h1>Register</h1>
+        <form method="POST" action="{{ url_for('register') }}">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}<br>
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.email.label }}<br>
+                {{ form.email(size=32) }}<br>
+                {% for error in form.email.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.confirm_password.label }}<br>
+                {{ form.confirm_password(size=32) }}<br>
+                {% for error in form.confirm_password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
         </form>
-    </div>   
-    <div class="container2">
-        <form action="Register.html" method="POST">
-            <h2>Register</h2>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <label for="confirm password">Confirm Password:</label>
-            <input type="confirm password" id="confirm password" name="confirm password" required>
-
-            <button type="submit">Register</button>
-        </form>
-    </div>     
-        </div>
-    </section>
-    </div>
+    </main>
 </body>
 </html>

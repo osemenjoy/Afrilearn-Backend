@@ -1,14 +1,80 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>{{ user_type }} Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register with AfriLearn</title>
+    <link rel="stylesheet" href="css/Register.css">
+    <script defer src="js/Register.js"></script>
 </head>
 <body>
-    <h2>{{ user_type }} Sign Up</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign Up</button>
-    </form>
+    <header>
+        <nav>
+            <div class="logo">AfriLearning</div>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'programmes' %}">Programmes</a></li>
+                <li><a href="#">Tutors</a></li>
+                <li><a href="{% url 'learner_signup' %}">Register as Learner</a></li>
+                <li><a href="{% url 'tutor_signup' %}">Register as Tutor</a></li>
+                <li><a href="{% url 'login' %}">Log In</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Register with AfriLearn</h1>
+    </section>
+    <section class="container">
+        <div class="switch-btn">
+            <button class="student-btn" onclick="showStudentForm()">
+                Student
+            </button>
+            <button class="tutor-btn" onclick="showTutorForm()">
+                Tutor
+            </button>
+        </div>
+        <div class="container-sm">
+            <div class="container1" id="student-form">
+                <form action="{% url 'learner_signup' %}" method="POST">
+                    {% csrf_token %}
+                    <h2>Register as Learner</h2>
+                    <label for="student-username">Username:</label>
+                    <input type="text" id="student-username" name="username" required>
+                    
+                    <label for="student-email">Email:</label>
+                    <input type="email" id="student-email" name="email" required>
+                    
+                    <label for="student-password">Password:</label>
+                    <input type="password" id="student-password" name="password" required>
+
+                    <label for="student-confirm-password">Confirm Password:</label>
+                    <input type="password" id="student-confirm-password" name="confirm_password" required>
+
+                    <button type="submit">Register</button>
+                </form>
+            </div>   
+            <div class="container2" id="tutor-form" style="display:none;">
+                <form action="{% url 'tutor_signup' %}" method="POST">
+                    {% csrf_token %}
+                    <h2>Register as Tutor</h2>
+                    <label for="tutor-username">Username:</label>
+                    <input type="text" id="tutor-username" name="username" required>
+                    
+                    <label for="tutor-email">Email:</label>
+                    <input type="email" id="tutor-email" name="email" required>
+                    
+                    <label for="tutor-password">Password:</label>
+                    <input type="password" id="tutor-password" name="password" required>
+                    
+                    <label for="tutor-confirm-password">Confirm Password:</label>
+                    <input type="password" id="tutor-confirm-password" name="confirm_password" required>
+
+                    <button type="submit">Register</button>
+                </form>
+            </div>     
+        </div>
+    </section>
 </body>
 </html>

@@ -8,25 +8,30 @@ from django.http import HttpResponse
 def my_view(request):
     return HttpResponse("Hello, world!")
 
+def home_view(request):
+    return render(request, 'afri_learn.html')
+
 def tutor_signup(request):
     if request.method == 'POST':
         form = TutorSignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect('home')
     else:
         form = TutorSignUpForm()
-    return render(request, 'signup.html', {'form': form, 'user_type': 'Tutor'})
+
+    return render(request, 'Register.html', {'form': form, 'user_type': 'Tutor'})
 
 def learner_signup(request):
     if request.method == 'POST':
         form = LearnerSignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect('home')
     else:
         form = LearnerSignUpForm()
-    return render(request, 'signup.html', {'form': form, 'user_type': 'Student'})
+
+    return render(request, 'Register.html', {'form': form, 'user_type': 'Learner'})
 
 def login_view(request):
     if request.method == 'POST':
@@ -47,3 +52,13 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+def programmes_view(request):
+    return render(request, 'Programmes.html')
+
+def tutors_view(request):
+    return render(request, 'Tutors.html')
+
+def popular_programmes_view(request):
+    return render(request, 'popular_programmes.html')
+

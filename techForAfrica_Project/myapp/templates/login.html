@@ -1,14 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriLearn - Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Login.css' %}">
+    <script src="{% static 'js/Login.js' %}"></script>
+    <img src="{% static 'images/AfriLearn logo.jpeg' %}" alt="AfriLearn Logo">
 </head>
 <body>
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
+    <header>
+        <nav>
+            <div class="logo"><img src="images/AfriLearn logo.jpeg" alt="AfriLearn">
+                <h1><strong>AfriLearn</strong></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'programmes' %}">Programmes</a></li>
+                <li><a href="#">Tutors</a></li>
+                <li><a href="{% url 'learner_signup' %}">Register as Learner</a></li>
+                <li><a href="{% url 'tutor_signup' %}">Register as Tutor</a></li>
+                <li><a href="{% url 'login' %}">Log In</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="buttons">
+            <button id="homeButton">Home</button>
+            <button id="registerButton">Register</button>
+        </div>
+        <section class="login-section">
+            <h1>Login</h1>
+            <p>sign in to your account</p>
+            <div class="toggle-buttons">
+                <button id="studentsButton" class="active">Students</button>
+                <button id="tutorsButton">Tutors</button>
+            </div>
+            <div id="studentsForm" class="login-form active">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Login</button>
+                <p>Forgot password, click <a href="#">here</a> to reset</p>
+            </div>
+            <div id="tutorsForm" class="login-form">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="text" placeholder="Tutor ID">
+                <button>Login</button>
+                <p>Forgot password, click <a href="#">here</a> to reset</p>
+            </div>
+        </section>
+        <button id="registerWithAfriLearn">Register with AfriLearn</button>
+    </main>
 </body>
 </html>

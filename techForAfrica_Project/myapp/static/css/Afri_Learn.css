@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 20px 0px;
+}
+
+/* navigational styles */
+nav {
+    font-family: cursive;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo Styling */
+
+.logo {
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .logo img {
+    width: 100px; 
+    height: auto;  
+    margin-right: 1rem; 
+    border-radius: 40px;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem; 
+    margin: 0; 
+    color: hsl(189, 64%, 54%); 
+  }
+  
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links_2{
+    color: black;
+    list-style: none;
+
+}
+
+/* Header styling */
+
+section h2 {
+    font-size: 3rem;
+    width: auto;
+    padding-left: 100px;
+    color: #000000;
+}
+.hero {
+    display: flex;
+    flex-grow: 0%;
+    justify-content: space-between;
+    align-items: right;
+    background-color: rgb(103,203,231);
+    gap: 100px;
+}
+
+
+/* search button styling */
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #f1f1f1;
+}
+
+.search input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.search button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #373aeef9;
+    color: white;
+    border-radius: 30px;
+}
+
+.why-us {
+    text-align: center;
+    padding: 5px 20px;
+    background-color: rgb(103,203,231);
+    color: #ffffff;
+}
+
+.why-us h2 {
+    margin-bottom: 20px;
+}
+
+.why-us-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.why-us-content img {
+    max-width: 300px;
+    height: auto;
+    padding-right: 100px;
+}
+
+.why-us-content h3 {
+    font-size: 2rem;
+    min-width: auto;
+    padding-left: 100px;
+    
+    
+}
+
+.popular-courses {
+    text-align: center;
+    padding: 30px 0px 30px;
+}
+
+.popular-courses h2 {
+    margin-bottom: 40px;
+    background-color: rgb(103,203,231);
+    
+}
+
+.course-cards {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: none;
+}
+
+.course-card {
+    text-align: center;
+    max-width: 350px;
+}
+
+.course-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.become-tutor {
+    text-align: center;
+    color: #333;
+    padding: 30px 0px 30px;
+}
+
+.become-tutor h2 {
+    background-color: rgb(103,203,231);
+}
+
+.tutor-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+.tutor-content img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.tutor-content h3 {
+    font-size: 30px;
+    text-align: justify;
+    max-width: 600px;
+}
+
+footer {
+    background-color: rgb(103,203,231);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content div {
+    flex: 1;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-content input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.footer-content button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+footer p {
+    margin-top: 20px;
+    color: #333;
+}
