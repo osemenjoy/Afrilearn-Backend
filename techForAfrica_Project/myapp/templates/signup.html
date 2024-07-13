@@ -4,23 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register with AfriLearn</title>
-    <link rel="stylesheet" href="css/Register.css">
-    <script defer src="js/Register.js"></script>
-</head>
+    <title>AfriLearn Login</title>
+    <link rel="stylesheet" href="Login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">AfriLearning</div>
+    <header class="header">
+        <div class="logo">
+            <img src="images/Logo.jpg" alt="Logo">
+        </div>
+        <nav class="nav-bar">
             <ul class="nav-links">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'programmes' %}">Programmes</a></li>
-                <li><a href="#">Tutors</a></li>
-                <li><a href="{% url 'learner_signup' %}">Register as Learner</a></li>
-                <li><a href="{% url 'tutor_signup' %}">Register as Tutor</a></li>
-                <li><a href="{% url 'login' %}">Log In</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li><a href="Afri_Learn.html">Home</a></li>
+                <li><a href="Programmes.html">Programmes</a></li>
+                <li><a href="Tutors.html">Tutors</a></li>
+                <li><a href="Register.html">Register with AfriLearn</a></li>
+                <li><a href="Login.html">Log In</a></li>
             </ul>
+            <div class="sub-nav">
+                <ul>
+                    <li><a class="sub-nav1" href="Afri_Learn.html">Back to Home</a></li>
+                    <li><a class="sub-nav2" href="">Register</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <section class="hero">

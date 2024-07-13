@@ -20,7 +20,7 @@ def tutor_signup(request):
     else:
         form = TutorSignUpForm()
 
-    return render(request, 'Register.html', {'form': form, 'user_type': 'Tutor'})
+    return render(request, 'Tutor-Register.html', {'form': form, 'user_type': 'Tutor'})
 
 def learner_signup(request):
     if request.method == 'POST':
@@ -31,7 +31,7 @@ def learner_signup(request):
     else:
         form = LearnerSignUpForm()
 
-    return render(request, 'Register.html', {'form': form, 'user_type': 'Learner'})
+    return render(request, 'Student-Register.html', {'form': form, 'user_type': 'Learner'})
 
 def login_view(request):
     if request.method == 'POST':
@@ -59,6 +59,6 @@ def programmes_view(request):
 def tutors_view(request):
     return render(request, 'Tutors.html')
 
-def popular_programmes_view(request):
-    return render(request, 'popular_programmes.html')
+def register(request):
+    return render(request, 'Register.html')
 

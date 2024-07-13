@@ -1,14 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.student-btn').addEventListener('click', showStudentForm);
-    document.querySelector('.tutor-btn').addEventListener('click', showTutorForm);
-});
+// function showForm(formId) {
+//     var studentsForm = document.getElementById('students');
+//     var tutorsForm = document.getElementById('tutors');
+//     var buttons = document.querySelectorAll('.tab-btn');
+    
+//     buttons.forEach(function(btn) {
+//         btn.classList.remove('active');
+//     });
 
-function showStudentForm() {
-    document.getElementById('student-form').style.display = 'block';
-    document.getElementById('tutor-form').style.display = 'none';
-}
-
-function showTutorForm() {
-    document.getElementById('student-form').style.display = 'none';
-    document.getElementById('tutor-form').style.display = 'block';
-}
+//     if (formId === 'students') {
+//         studentsForm.style.display = 'block';
+//         tutorsForm.style.display = 'none';
+//         document.querySelector('.tab-btn[onclick="showForm(\'students\')"]').classList.add('active');
+//     } else {
+//         studentsForm.style.display = 'none';
+//         tutorsForm.style.display = 'block';
+//         document.querySelector('.tab-btn[onclick="showForm(\'tutors\')"]').classList.add('active');
+//     }
+// }
