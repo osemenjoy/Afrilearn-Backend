@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home_view, name='home'),
+    path('', views.LandingPage_view, name='landing_page'),
+    path('afrilearn/', views.home_view, name='home'),
     path('signup/tutor/', views.tutor_signup, name='tutor_signup'),
     path('signup/learner/', views.learner_signup, name='learner_signup'),
     path('signup/student/', views.learner_signup, name='student-register'),  # Alias for student-register

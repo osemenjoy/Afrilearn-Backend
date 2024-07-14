@@ -9,7 +9,10 @@ def my_view(request):
     return HttpResponse("Hello, world!")
 
 def home_view(request):
-    return render(request, 'afri_learn.html')
+    return render(request, 'Afri_Learn.html')
+
+def LandingPage_view(request):
+    return render(request, 'LandingPage.html')
 
 def tutor_signup(request):
     if request.method == 'POST':
