@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.LandingPage_view, name='landing_page'),
-    path('afrilearn/', views.home_view, name='home'),
+    path('afrilearn/', views.LandingPage_view, name='home'),
     path('signup/tutor/', views.tutor_signup, name='tutor_signup'),
     path('signup/learner/', views.learner_signup, name='learner_signup'),
     path('signup/student/', views.learner_signup, name='student-register'),  # Alias for student-register
@@ -13,4 +13,6 @@ urlpatterns = [
     path('programmes/', views.programmes_view, name='programmes'),
     path('tutors/', views.tutors_view, name='tutors'),
     path('register/', views.register, name='register'),  # Added URL pattern for register
+    path('student-dashboard/', views.student_dashboard, name='student_dashboard'),
+    path('tutor-dashboard/', views.tutor_dashboard, name='tutor_dashboard'),
 ]
