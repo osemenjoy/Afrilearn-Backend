@@ -38,10 +38,9 @@
                 <button id="student-btn" class="active"><strong>Student</strong></button>
                 <button id="tutor-btn"><strong>Tutor</strong></button>
             </div>
-            <form>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <br>
+            <form action="{% url 'login' %}" method="POST" class="form">
+                {% csrf_token %}
+                {{form.as_p}}
                 <button type="submit"><strong>Login</strong></button>
             </form>
             <div class="additional-links">

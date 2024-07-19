@@ -5,47 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AfriLearn</title>
-    <link href="{% static 'css/LandingPage.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/LandingPage.css'%}">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="{% static 'images/Landing_Page_pics-removebg.png' %}" alt="AfriLearn Logo">
+            <img src="{% static 'images/AfrLogo.png' %}" alt="Logo">
         </div>
         <nav class="nav-bar">
-        <ul class="nav-links">
-            <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
-            <li><a href="{% url 'programmes' %}" class="nav-link">Programmes</a></li>
-            <li><a href="{% url 'tutors' %}" class="nav-link">Tutors</a></li>
-            <li><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
-            <li class="signup">
-                <a href="{% url 'learner_signup' %}" style="color: aliceblue;">Sign Up</a>
-                <div class="dropdown">
-                    <button class="dropbtn">
-                    <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                    <a href="{% url 'student-register' %}">Sign Up as Student</a>
-                    <a href="{% url 'tutor-register' %}">Sign Up as Tutor</a>
-                    </div>
-                </div> 
-            </li>
-        </ul>
+            <ul>
+                <li class="nav-link"><a href="{% url 'home' %}">Home</a></li>
+                <li class="nav-link"><a href="{% url 'programmes' %}">Programmes</a></li>
+                <li class="nav-link"><a href="{% url 'tutors' %}">Tutors</a></li>
+                <li class="nav-link"><a href="{% url 'login' %}">Log In</a></li>
+                <li class="signup">
+                    <a href="{% url 'student-register' %}" style="color: aliceblue;">Sign Up</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                        <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                        <a href="{% url 'student-register' %}">Sign Up as Student</a>
+                        <a href="{% url 'tutor-register' %}">Sign Up as Tutor</a>
+                        </div>
+                    </div> 
+                </li>
+            </ul>
         </nav>
     </header>
-
-    <section class="hero-container">
-        <div class="content-container">
+    <section class="hero-container" >
+        <div class="content-container" id="dropdown">
             <div class="text">
                 <span>#AfriTechRise</span> <br>
                 <h2>Flexible Solutions for <br>
                     Your Tech Studies</h2>
-                <p>Are you eager to dive into cutting-edge technology? 
-                    Join us to access premium e-learning materials in Cybersecurity, IoT, Graphics, Renewable Energy, and AI. 
-                    As a new and innovative company, we empower you with the knowledge and skills to thrive. 
-                    Sign up now and be part of a community shaping the future of technology!</p>
+                <p>Are you eager to dive into cutting-edge technology? Join us to access premium e-learning materials in Cybersecurity, IoT, Graphics, Renewable Energy, and AI. As a new and innovative company, we empower you with the knowledge and skills to thrive. Sign up now and be part of a community shaping the future of technology!</p>
                 <div class="hero-btn">
                     <div class="hero-btn1">
                         <a href="">Start Today</a>
@@ -55,7 +51,7 @@
                             <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content">
-                            <a href="{%url 'student-register'%}">Sign Up as Student</a>
+                            <a href="{% url 'student-register' %}">Sign Up as Student</a>
                             <a href="{% url 'tutor-register' %}">Sign Up as Tutor</a>
                             </div>
                         </div> 
@@ -63,7 +59,7 @@
                 </div>
             </div>
             <div class="side-img">
-                <img src="{% static 'images/Landing_Page_pics-removebg.png' %}" alt="">
+                <img src="{static 'images/Landing_Page_pics-removebg.png' %}" alt="">
             </div>
         </div>
     </section>
@@ -73,25 +69,12 @@
         <p>
         We foster a supportive community where Africans can learn, connect, collaborate, and learn from each other. We are focused on bridging the technological gap in Africa. AfriLearn is for Africans by Africans.
         </p>
-        <!-- <div class="hero-btn1">
-            <a href="">Start Today</a>
-            </a>
-            <div class="dropdown">
-                <button class="dropbtn">
-                <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                <a href="Student-Register.html">Sign Up as Student</a>
-                <a href="Tutor-Register.html">Sign Up as Tutor</a>
-                </div>
-            </div> 
-        </div> -->
     </section>
 
     <section class="courses">
         <h2>Our Most Popular Courses</h2>
         <div class="course">
-            <img src="{% static 'images/Rectangle 26.jpg'%}" alt="Data Analysis">
+            <img src="{% static 'images/Rectangle 26.jpg' %}" alt="Data Analysis">
             <strong><p>Data Analysis</p></strong>
         </div>
         <div class="course">
@@ -99,7 +82,7 @@
             <strong><p>Internet of Things</p></strong>
         </div>
         <div class="course">
-            <img src="{% static 'images/unsplash_ah-HeguOe9k.jpg'%}" alt="Cyber Security">
+            <img src="{% static 'images/unsplash_ah-HeguOe9k.jp' %}g" alt="Cyber Security">
             <strong><p>Cyber Security</p></strong>
         </div>
     </section>
@@ -107,14 +90,14 @@
     <section class="tutor">
         <div class="tutor-content">
             <div class="tutor-image">
-                <img src="{% static 'images/Tutor img.jpg'%}" alt="Tutor">
+                <img src="{% static 'images/Tutor img.jpg' %}" alt="Tutor">
             </div>
             <div class="tutor-text">
                 <h2>Join our vibrant community and be a part of something truly special in Africa!</h2>
                 <p>Connect with like-minded individuals, share your passions, teach your passions, and make lasting friendships with our students. Together, we can create a positive and supportive environment where everyone feels welcome and valued. Join us today and let’s make a difference together!</p>
                <br>
                 <div class="tutor-link">
-                    <a href="{% static 'Register.html'%}"><strong>Click to Register!!!<strong></a>
+                    <a href="{% url 'student-register' %}"><strong>Click to Register!!!<strong></a>
                     
                 </div>
             </div>
@@ -154,6 +137,5 @@
             <p>© AfriLearn 2024</p>
         </div>
     </footer>
-    <script src="{% static 'js/Afri_LearnLanding.js' %}"></script>
 </body>
 </html>

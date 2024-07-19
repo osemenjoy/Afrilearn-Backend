@@ -6,6 +6,7 @@ from .forms import TutorSignUpForm, LearnerSignUpForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.db import IntegrityError
+from .models import *
 
 from .models import Profile
 
@@ -59,7 +60,7 @@ def tutor_signup(request):
                 user = authenticate(username=username, password=password1)
                 if user is not None:
                     login(request, user)
-                    return redirect('student_dashboard')  # Redirect to tutor dashboard after signup
+                    return redirect('login')  # Redirect to tutor dashboard after signup
         else:
             # Print out form errors
             print(form.errors)
@@ -94,30 +95,44 @@ def learner_signup(request):
         form = LearnerSignUpForm()
     return render(request, 'Student-Register.html', {'form': form})
 
+
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
+            print("Form is valid")
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
+            print(f"Username: {username}, Password: {password}")
             user = authenticate(username=username, password=password)
             if user is not None:
+                print("User authenticated")
                 login(request, user)
-                
+
                 # Determine user type from Profile
                 try:
                     profile = Profile.objects.get(user=user)
+                    print(f"Profile user type: {profile.user_type}")
                     if profile.user_type == 'learner':
                         return redirect('student_dashboard')  # Change 'student_dashboard' to your actual URL name
                     elif profile.user_type == 'tutor':
                         return redirect('tutor_dashboard')  # Change 'tutor_dashboard' to your actual URL name
+                    else:
+                        print("Unknown user type")
+                        return HttpResponse("Unknown user type.")
                 except Profile.DoesNotExist:
+                    print("Profile does not exist")
                     return HttpResponse("User profile does not exist.")
             else:
-                return HttpResponse("Invalid username or password")
+                print("Authentication failed")
+                return HttpResponse("Invalid username or password.")
+        else:
+            print("Form is invalid")
+            return render(request, 'login.html', {'form': form})
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
+
 
 def logout_view(request):
     logout(request)
