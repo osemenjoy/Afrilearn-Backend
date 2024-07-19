@@ -88,7 +88,7 @@ def learner_signup(request):
                 try:
                     user = User.objects.create_user(username=username, email=email, password=password1)
                     profile = Profile.objects.create(user=user, user_type='learner', name=name, phone_number=phone_number, country=country, gender=gender)
-                    return redirect('home')
+                    return redirect('login')
                 except IntegrityError:
                     form.add_error('username', 'Username already taken')
     else:
